@@ -1,0 +1,46 @@
+body{
+    padding: 10px;
+    background-color: #000000;
+    color: #f9f9f9;
+}
+
+.automata-container{
+
+    border: solid 4px #5F0061 ;
+}
+
+.status-container{
+    margin-top: 2%;
+    border: solid 4px #5F0061 ;
+}
+
+.expression-container{
+    margin-top: 2%;
+    margin-left: 10px;
+    border: solid 4px #5F0061 ;
+}
+
+.automata-img{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 15px;
+}
+.string-container{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.input-label{
+    color: #5F0061;
+    font-weight: bold;
+}
+
+.evaluation-options{
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+   border-color: #5F0061;
+    border-width: 2px;
+    margin: 3px;
+}
+
