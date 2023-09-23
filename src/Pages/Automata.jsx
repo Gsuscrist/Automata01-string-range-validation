@@ -40,12 +40,766 @@ import stgfb3 from '../assets/Img/bar status f-b-3.svg'
 import '../assets/Css/automata.css'
 //utilities
 import {useEffect, useState} from "react";
+import Swal from "sweetalert2";
 
 
 export const Automata=()=>{
 const [keyword,setKeyword]= useState("");
 const [automataPath, setAutomataPath]=useState('');
 const [string, setString]=useState("");
+const [stringList, setStringList]=useState([]);
+const [evaluationOpc, setEvaluationOpc] = useState(0);
+
+    //events handler
+    const handlerStringChange=(e)=>{
+        setString(e.target.value);
+    }
+
+    const handlerStart=(e)=>{
+        e.preventDefault()
+        if(!string){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Ingrese una cadena valida!',
+                background: "#2c2c2c",
+                color: "#fff",
+                confirmButtonColor: "#850287",
+                iconColor: "#850287"
+
+            })
+            return null;
+        }
+        setKeyword("stg1")
+        setStringList(string.split(""))
+        setEvaluationOpc(1)
+
+    }
+
+    const handlerReset=(e)=>{
+        e.preventDefault()
+        //hacer confirmacion para limpiar
+        document.getElementById('floatingInput').value = '';
+        setKeyword("")
+        setStringList([])
+        setEvaluationOpc(0)
+
+
+    }
+
+    //functions
+    const getElementOf=(list)=>{
+        let newElement = list.shift()
+       if (newElement==null || newElement ===" "){
+           Swal.fire({
+               icon: 'error',
+               title: 'Oops...',
+               text: 'Cadena Invalida, elementos faltantes!',
+               background: "#2c2c2c",
+               color: "#fff",
+               confirmButtonColor: "#850287",
+               iconColor: "#850287"
+
+           })
+       }else{
+           return newElement;
+       }
+    }
+
+    const validateLetterAtoZ=(element)=>{
+        switch (element){
+            case "A":
+            case "B":
+            case "C":
+            case "D":
+            case "E":
+            case "F":
+            case "G":
+            case "H":
+            case "I":
+            case "J":
+            case "K":
+            case "L":
+            case "M":
+            case "N":
+            case "O":
+            case "P":
+            case "Q":
+            case "R":
+            case "S":
+            case "T":
+            case "U":
+            case "V":
+            case "W":
+            case "X":
+            case "Y":
+            case "Z":
+                return true;
+            default:
+                return false;
+
+        }
+    }
+    const validateLetterAtoE=(element)=>{
+        switch (element){
+            case "A":
+            case "B":
+            case "C":
+            case "D":
+            case "E":
+                return true;
+            default:
+                return false;
+        }
+    }
+    const validateDigits0to9=(element)=>{
+        switch (element) {
+            case "0":
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9":
+                return true;
+            default:
+                return false;
+        }
+    }
+    const validateDigits1to9=(element)=>{
+        switch (element) {
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9":
+                return true;
+            default:
+                return false;
+        }
+    }
+
+
+    const validateChainFast=()=>{
+        if(stringList){
+            let element = getElementOf(stringList);
+            if (element=="C"){
+                element = getElementOf(stringList);
+                setKeyword("stg2a")
+                if(element === "Z"){
+                    setKeyword("stg3a")
+                    element = getElementOf(stringList)
+                    if(validateLetterAtoZ(element)){
+                        setKeyword("stg4a")
+                        element = getElementOf(stringList)
+                        if(element==="-"){
+                            setKeyword("stg5a")
+                            element = getElementOf(stringList)
+                            if(element==="0"){
+                                setKeyword("stg6a")
+                                element = getElementOf(stringList)
+                                if(element==="0"){
+                                    setKeyword("stg7a")
+                                    element = getElementOf(stringList)
+                                    if(validateDigits1to9(element)){
+                                        setKeyword("stg8a")
+                                        element = getElementOf(stringList)
+                                        if(element==="-"){
+                                            setKeyword("stg14a1")
+                                            element = getElementOf(stringList)
+                                            if(validateLetterAtoZ(element)){
+                                                setKeyword("stgfa1")
+                                                if(stringList.length !== 0){
+                                                    Swal.fire({
+                                                        icon: 'error',
+                                                        title: 'Oops...',
+                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+
+                                                    })
+                                                }else{
+                                                    Swal.fire({
+                                                        icon: 'success',
+                                                        title: 'Congrats...',
+                                                        text: 'Cadena valida',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+                                                    })
+                                                }
+                                            }else{
+                                                Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Oops...',
+                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    background: "#2c2c2c",
+                                                    color: "#fff",
+                                                    confirmButtonColor: "#850287",
+                                                    iconColor: "#850287"
+
+                                                })
+                                            }
+                                        }else{
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Oops...',
+                                                text: 'Transicion Q₈-Q₁₄ invalida!',
+                                                background: "#2c2c2c",
+                                                color: "#fff",
+                                                confirmButtonColor: "#850287",
+                                                iconColor: "#850287"
+
+                                            })
+                                        }
+                                    }else{
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Oops...',
+                                            text: 'Transicion Q₇-Q₈ invalida!',
+                                            background: "#2c2c2c",
+                                            color: "#fff",
+                                            confirmButtonColor: "#850287",
+                                            iconColor: "#850287"
+
+                                        })
+                                    }
+                                }else if(validateDigits1to9(element)){
+                                    setKeyword("stg9a")
+                                    element=getElementOf(stringList)
+                                    if(validateDigits0to9(element)){
+                                        setKeyword("stg10a")
+                                        element = getElementOf(stringList)
+                                        if(element==="-"){
+                                            setKeyword("stg14a2")
+                                            element = getElementOf(stringList)
+                                            if(validateLetterAtoZ(element)){
+                                                setKeyword("stgfa2")
+                                                if(stringList.length !== 0){
+                                                    Swal.fire({
+                                                        icon: 'error',
+                                                        title: 'Oops...',
+                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+
+                                                    })
+                                                }else{
+                                                    Swal.fire({
+                                                        icon: 'success',
+                                                        title: 'Congrats...',
+                                                        text: 'Cadena valida',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+                                                    })
+                                                }
+                                            }else{
+                                                Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Oops...',
+                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    background: "#2c2c2c",
+                                                    color: "#fff",
+                                                    confirmButtonColor: "#850287",
+                                                    iconColor: "#850287"
+
+                                                })
+                                            }
+                                        }else{
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Oops...',
+                                                text: 'Transicion Q₁₀-Q₁₄ invalida!',
+                                                background: "#2c2c2c",
+                                                color: "#fff",
+                                                confirmButtonColor: "#850287",
+                                                iconColor: "#850287"
+
+                                            })
+                                        }
+                                    }else{
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Oops...',
+                                            text: 'Transicion Q₉-Q₁₀ invalida!',
+                                            background: "#2c2c2c",
+                                            color: "#fff",
+                                            confirmButtonColor: "#850287",
+                                            iconColor: "#850287"
+
+                                        })
+                                    }
+                                }else{
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: 'Transicion Q₆-Q₇ o Q₉ invalida!',
+                                        background: "#2c2c2c",
+                                        color: "#fff",
+                                        confirmButtonColor: "#850287",
+                                        iconColor: "#850287"
+
+                                    })
+                                }
+                            }else if(validateDigits1to9(element)){
+                                setKeyword("stg11a")
+                                element =getElementOf(stringList)
+                                if(validateDigits0to9(element)){
+                                    setKeyword("stg12a")
+                                    element =getElementOf(stringList)
+                                    if(validateDigits0to9(element)){
+                                        setKeyword("stg13a")
+                                        element = getElementOf(stringList)
+                                        if(element==="-"){
+                                            setKeyword("stg14a3")
+                                            element = getElementOf(stringList)
+                                            if(validateLetterAtoZ(element)){
+                                                setKeyword("stgfa3")
+                                                if(stringList.length !== 0){
+                                                    Swal.fire({
+                                                        icon: 'error',
+                                                        title: 'Oops...',
+                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+
+                                                    })
+                                                }else{
+                                                    Swal.fire({
+                                                        icon: 'success',
+                                                        title: 'Congrats...',
+                                                        text: 'Cadena valida',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+                                                    })
+                                                }
+                                            }else{
+                                                Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Oops...',
+                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    background: "#2c2c2c",
+                                                    color: "#fff",
+                                                    confirmButtonColor: "#850287",
+                                                    iconColor: "#850287"
+
+                                                })
+                                            }
+                                        }else{
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Oops...',
+                                                text: 'Transicion Q₁₃-Q₁₄ invalida!',
+                                                background: "#2c2c2c",
+                                                color: "#fff",
+                                                confirmButtonColor: "#850287",
+                                                iconColor: "#850287"
+
+                                            })
+                                        }
+                                    }else{
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Oops...',
+                                            text: 'Transicion Q₁₂-Q₁₃ invalida!',
+                                            background: "#2c2c2c",
+                                            color: "#fff",
+                                            confirmButtonColor: "#850287",
+                                            iconColor: "#850287"
+
+                                        })
+                                    }
+                                }else{
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: 'Transicion Q₁₁-Q₁₂ invalida!',
+                                        background: "#2c2c2c",
+                                        color: "#fff",
+                                        confirmButtonColor: "#850287",
+                                        iconColor: "#850287"
+
+                                    })
+                                }
+                            }else{
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'Transicion Q₅-Q₆ o Q₁₁ invalida!',
+                                    background: "#2c2c2c",
+                                    color: "#fff",
+                                    confirmButtonColor: "#850287",
+                                    iconColor: "#850287"
+
+                                })
+                            }
+                        }else{
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Transicion Q₄-Q₅ invalida!',
+                                background: "#2c2c2c",
+                                color: "#fff",
+                                confirmButtonColor: "#850287",
+                                iconColor: "#850287"
+
+                            })
+                        }
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Transicion Q₃-Q₄ invalida!',
+                            background: "#2c2c2c",
+                            color: "#fff",
+                            confirmButtonColor: "#850287",
+                            iconColor: "#850287"
+
+                        })
+                    }
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Transicion Q₁-Q₃ invalida!',
+                        background: "#2c2c2c",
+                        color: "#fff",
+                        confirmButtonColor: "#850287",
+                        iconColor: "#850287"
+
+                    })
+                }
+            }else
+            if(element=="D"){
+                setKeyword("stg2b")
+                element = getElementOf(stringList);
+                if(validateLetterAtoE(element)){
+                    setKeyword("stg3b")
+                    element = getElementOf(stringList)
+                    if(validateLetterAtoZ(element)){
+                        setKeyword("stg3b")
+                        element = getElementOf(stringList)
+                        if(element==="-"){
+                            setKeyword("stg5b")
+                            element = getElementOf(stringList)
+                            if(element==="0"){
+                                setKeyword("stg6b")
+                                element = getElementOf(stringList)
+                                if(element==="0"){
+                                    setKeyword("stg7b")
+                                    element = getElementOf(stringList)
+                                    if(validateDigits1to9(element)){
+                                        setKeyword("stg8b")
+                                        element = getElementOf(stringList)
+                                        if(element==="-"){
+                                            setKeyword("stg14b1")
+                                            element = getElementOf(stringList)
+                                            if(validateLetterAtoZ(element)){
+                                                setKeyword("stgfb1")
+                                                if(stringList.length !== 0){
+                                                    Swal.fire({
+                                                        icon: 'error',
+                                                        title: 'Oops...',
+                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+
+                                                    })
+                                                }else{
+                                                    Swal.fire({
+                                                        icon: 'success',
+                                                        title: 'Congrats...',
+                                                        text: 'Cadena valida',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+                                                    })
+                                                }
+                                            }else{
+                                                Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Oops...',
+                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    background: "#2c2c2c",
+                                                    color: "#fff",
+                                                    confirmButtonColor: "#850287",
+                                                    iconColor: "#850287"
+
+                                                })
+                                            }
+                                        }else{
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Oops...',
+                                                text: 'Transicion Q₈-Q₁₄ invalida!',
+                                                background: "#2c2c2c",
+                                                color: "#fff",
+                                                confirmButtonColor: "#850287",
+                                                iconColor: "#850287"
+
+                                            })
+                                        }
+                                    }else{
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Oops...',
+                                            text: 'Transicion Q₇-Q₈ invalida!',
+                                            background: "#2c2c2c",
+                                            color: "#fff",
+                                            confirmButtonColor: "#850287",
+                                            iconColor: "#850287"
+
+                                        })
+                                    }
+                                }else if(validateDigits1to9(element)){
+                                    setKeyword("stg9b")
+                                    element=getElementOf(stringList)
+                                    if(validateDigits0to9(element)){
+                                        setKeyword("stg10b")
+                                        element = getElementOf(stringList)
+                                        if(element==="-"){
+                                            setKeyword("stg14b2")
+                                            element = getElementOf(stringList)
+                                            if(validateLetterAtoZ(element)){
+                                                setKeyword("stgfb2")
+                                                if(stringList.length !== 0){
+                                                    Swal.fire({
+                                                        icon: 'error',
+                                                        title: 'Oops...',
+                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+
+                                                    })
+                                                }else{
+                                                    Swal.fire({
+                                                        icon: 'success',
+                                                        title: 'Congrats...',
+                                                        text: 'Cadena valida',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+                                                    })
+                                                }
+                                            }else{
+                                                Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Oops...',
+                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    background: "#2c2c2c",
+                                                    color: "#fff",
+                                                    confirmButtonColor: "#850287",
+                                                    iconColor: "#850287"
+
+                                                })
+                                            }
+                                        }else{
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Oops...',
+                                                text: 'Transicion Q₁₀-Q₁₄ invalida!',
+                                                background: "#2c2c2c",
+                                                color: "#fff",
+                                                confirmButtonColor: "#850287",
+                                                iconColor: "#850287"
+
+                                            })
+                                        }
+                                    }else{
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Oops...',
+                                            text: 'Transicion Q₉-Q₁₀ invalida!',
+                                            background: "#2c2c2c",
+                                            color: "#fff",
+                                            confirmButtonColor: "#850287",
+                                            iconColor: "#850287"
+
+                                        })
+                                    }
+                                }else{
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: 'Transicion Q₆-Q₇ o Q₉ invalida!',
+                                        background: "#2c2c2c",
+                                        color: "#fff",
+                                        confirmButtonColor: "#850287",
+                                        iconColor: "#850287"
+
+                                    })
+                                }
+                            }else if(validateDigits1to9(element)){
+                                setKeyword("stg11b")
+                                element =getElementOf(stringList)
+                                if(validateDigits0to9(element)){
+                                    setKeyword("stg12b")
+                                    element =getElementOf(stringList)
+                                    if(validateDigits0to9(element)){
+                                        setKeyword("stg13b")
+                                        element = getElementOf(stringList)
+                                        if(element==="-"){
+                                            setKeyword("stg14b3")
+                                            element = getElementOf(stringList)
+                                            if(validateLetterAtoZ(element)){
+                                                setKeyword("stgfb3")
+                                                if(stringList.length !== 0){
+                                                    Swal.fire({
+                                                        icon: 'error',
+                                                        title: 'Oops...',
+                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+
+                                                    })
+                                                }else{
+                                                    Swal.fire({
+                                                        icon: 'success',
+                                                        title: 'Congrats...',
+                                                        text: 'Cadena valida',
+                                                        background: "#2c2c2c",
+                                                        color: "#fff",
+                                                        confirmButtonColor: "#850287",
+                                                        iconColor: "#850287"
+                                                    })
+                                                }
+                                            }else{
+                                                Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Oops...',
+                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    background: "#2c2c2c",
+                                                    color: "#fff",
+                                                    confirmButtonColor: "#850287",
+                                                    iconColor: "#850287"
+
+                                                })
+                                            }
+                                        }else{
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Oops...',
+                                                text: 'Transicion Q₁₃-Q₁₄ invalida!',
+                                                background: "#2c2c2c",
+                                                color: "#fff",
+                                                confirmButtonColor: "#850287",
+                                                iconColor: "#850287"
+
+                                            })
+                                        }
+                                    }else{
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Oops...',
+                                            text: 'Transicion Q₁₂-Q₁₃ invalida!',
+                                            background: "#2c2c2c",
+                                            color: "#fff",
+                                            confirmButtonColor: "#850287",
+                                            iconColor: "#850287"
+
+                                        })
+                                    }
+                                }else{
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: 'Transicion Q₁₁-Q₁₂ invalida!',
+                                        background: "#2c2c2c",
+                                        color: "#fff",
+                                        confirmButtonColor: "#850287",
+                                        iconColor: "#850287"
+
+                                    })
+                                }
+                            }else{
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'Transicion Q₅-Q₆ o Q₁₁ invalida!',
+                                    background: "#2c2c2c",
+                                    color: "#fff",
+                                    confirmButtonColor: "#850287",
+                                    iconColor: "#850287"
+
+                                })
+                            }
+                        }else{
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Transicion Q₄-Q₅ invalida!',
+                                background: "#2c2c2c",
+                                color: "#fff",
+                                confirmButtonColor: "#850287",
+                                iconColor: "#850287"
+
+                            })
+                        }
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Transicion Q₃-Q₄ invalida!',
+                            background: "#2c2c2c",
+                            color: "#fff",
+                            confirmButtonColor: "#850287",
+                            iconColor: "#850287"
+
+                        })
+                    }
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Transicion Q₂-Q₃ invalida!',
+                        background: "#2c2c2c",
+                        color: "#fff",
+                        confirmButtonColor: "#850287",
+                        iconColor: "#850287"
+
+                    })
+                }
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Transicion Q₀-Q₁ o Q₂ invalida!',
+                    background: "#2c2c2c",
+                    color: "#fff",
+                    confirmButtonColor: "#850287",
+                    iconColor: "#850287"
+
+                })
+            }
+        }
+
+    }
 
 useEffect(()=>{
     const automataStage={
@@ -77,24 +831,7 @@ useEffect(()=>{
     }else {setAutomataPath(automataStage.default)}
 },[keyword]);
 
-const handlerStringChange=(e)=>{
-    setString(e.target.value);
-}
 
-const handlerStart=(e)=>{
-    e.preventDefault()
-    if(!string || string.length!=9){
-        console.log('error')
-    }
-    setKeyword("stg1")
-}
-
-const handlerReset=(e)=>{
-    e.preventDefault()
-    //hacer confirmacion para limpiar
-    setKeyword("")
-
-}
     return(
         <>
         <div className={"container"}>
@@ -130,7 +867,12 @@ const handlerReset=(e)=>{
                                     onClick={handlerReset}>Reset</button>
                                 </div>
                                 <div>
-                                    <button type={"button"} className={"btn btn-outline-light"}>Next</button>
+                                    {
+                                        evaluationOpc ===1?<button type={"button"} className={"btn btn-outline-light"}
+                                                                   onClick={validateChainFast}>Fast Evaluation</button>
+                                                           :<></>
+                                    }
+
                                 </div>
 
 
