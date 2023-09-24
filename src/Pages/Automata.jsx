@@ -844,8 +844,218 @@ useEffect(()=>{
             <div className={"evaluation-container container col-lg-12"}>
                 <div className={"row"}>
                    <div className={"status-container col-9"}>
-                   {/*imagen*/}
-                       <h3>imagen</h3>
+                   {/*tabla de transcicion*/}
+                        <table className={"transition-table"}>
+                            <thead>
+                                <tr>
+                                    <th scope={"col"}>State</th>
+                                    <th scope={"col"}>C</th>
+                                    <th scope={"col"}>D</th>
+                                    <th scope={"col"}>Z</th>
+                                    <th scope={"col"}>A...Z</th>
+                                    <th scope={"col"}>A...E</th>
+                                    <th scope={"col"}>-</th>
+                                    <th scope={"col"}>0</th>
+                                    <th scope={"col"}>0...9</th>
+                                    <th scope={"col"}>1...9</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope={"row"}>Q₀</th>
+                                    <th scope={"row"}>Q₁</th>
+                                    <th scope={"row"}>Q₂</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₁</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₃</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₂</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₃</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₃</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₄</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₄</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₅</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₅</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₆</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₁₁</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₆</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₇</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₉</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₇</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₈</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₈</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₁₄</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₉</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₁₀</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₁₀</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₁₄</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₁₁</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₁₂</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₁₂</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₁₃</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₁₃</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₁₄</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₁₄</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>Q₁₅</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                    <th scope={"row"}>X</th>
+                                </tr>
+                                <tr>
+                                    <th scope={"row"}>Q₁₅</th>
+                                    <th scope={"row"}>-</th>
+                                    <th scope={"row"}>-</th>
+                                    <th scope={"row"}>AC</th>
+                                    <th scope={"row"}>EP</th>
+                                    <th scope={"row"}>TA</th>
+                                    <th scope={"row"}>CI</th>
+                                    <th scope={"row"}>ON</th>
+                                    <th scope={"row"}>-</th>
+                                    <th scope={"row"}>-</th>
+                                </tr>
+                            </tbody>
+                        </table>
+
                    </div>
 
                    <div className={"expression-container col"}>
@@ -881,7 +1091,7 @@ useEffect(()=>{
                         </div>
                         <div className={"info-container"}>
                             {/*gramatica y notacion*/}
-                            <h3>notacion</h3>
+                           
                         </div>
                     </div>
                 </div>
