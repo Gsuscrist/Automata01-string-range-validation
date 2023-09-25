@@ -220,7 +220,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'error',
                                                         title: 'Oops...',
-                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        footer: 'cadena no finalizada!, quedan elementos por evaluar',
+                                                        text: `Cadena ${string} Invalida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -231,7 +232,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'success',
                                                         title: 'Congrats...',
-                                                        text: 'Cadena valida',
+                                                        footer: 'Cadena finalizada en estado de aceptación',
+                                                        text: `Cadena ${string} Valida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -242,7 +244,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                 Swal.fire({
                                                     icon: 'error',
                                                     title: 'Oops...',
-                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    footer: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    text: `Cadena ${string} Invalida`,
                                                     background: "#2c2c2c",
                                                     color: "#fff",
                                                     confirmButtonColor: "#850287",
@@ -254,7 +257,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                             Swal.fire({
                                                 icon: 'error',
                                                 title: 'Oops...',
-                                                text: 'Transicion Q₈-Q₁₄ invalida!',
+                                                footer: 'Transicion Q₈-Q₁₄ invalida!',
+                                                text: `Cadena ${string} Invalida`,
                                                 background: "#2c2c2c",
                                                 color: "#fff",
                                                 confirmButtonColor: "#850287",
@@ -266,7 +270,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                         Swal.fire({
                                             icon: 'error',
                                             title: 'Oops...',
-                                            text: 'Transicion Q₇-Q₈ invalida!',
+                                            footer: 'Transicion Q₇-Q₈ invalida!',
+                                            text: `Cadena ${string} Invalida`,
                                             background: "#2c2c2c",
                                             color: "#fff",
                                             confirmButtonColor: "#850287",
@@ -289,7 +294,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'error',
                                                         title: 'Oops...',
-                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        footer: 'cadena no finalizada!, quedan elementos por evaluar',
+                                                        text: `Cadena ${string} Invalida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -300,7 +306,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'success',
                                                         title: 'Congrats...',
-                                                        text: 'Cadena valida',
+                                                        footer: 'Cadena finalizada en estado de aceptación',
+                                                        text: `Cadena ${string} Valida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -311,7 +318,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                 Swal.fire({
                                                     icon: 'error',
                                                     title: 'Oops...',
-                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    footer: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    text: `Cadena ${string} Invalida`,
                                                     background: "#2c2c2c",
                                                     color: "#fff",
                                                     confirmButtonColor: "#850287",
@@ -323,7 +331,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                             Swal.fire({
                                                 icon: 'error',
                                                 title: 'Oops...',
-                                                text: 'Transicion Q₁₀-Q₁₄ invalida!',
+                                                footer: 'Transicion Q₁₀-Q₁₄ invalida!',
+                                                text: `Cadena ${string} Invalida`,
                                                 background: "#2c2c2c",
                                                 color: "#fff",
                                                 confirmButtonColor: "#850287",
@@ -335,7 +344,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                         Swal.fire({
                                             icon: 'error',
                                             title: 'Oops...',
-                                            text: 'Transicion Q₉-Q₁₀ invalida!',
+                                            footer: 'Transicion Q₉-Q₁₀ invalida!',
+                                            text: `Cadena ${string} Invalida`,
                                             background: "#2c2c2c",
                                             color: "#fff",
                                             confirmButtonColor: "#850287",
@@ -347,7 +357,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                     Swal.fire({
                                         icon: 'error',
                                         title: 'Oops...',
-                                        text: 'Transicion Q₆-Q₇ o Q₉ invalida!',
+                                        footer: 'Transicion Q₆-Q₇ o Q₉ invalida!',
+                                        text: `Cadena ${string} Invalida`,
                                         background: "#2c2c2c",
                                         color: "#fff",
                                         confirmButtonColor: "#850287",
@@ -373,7 +384,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'error',
                                                         title: 'Oops...',
-                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        footer: 'cadena no finalizada!, quedan elementos por evaluar',
+                                                        text: `Cadena ${string} Invalida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -384,7 +396,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'success',
                                                         title: 'Congrats...',
-                                                        text: 'Cadena valida',
+                                                        footer: 'Cadena finalizada en estado de aceptación',
+                                                        text: `Cadena ${string} Valida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -395,7 +408,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                 Swal.fire({
                                                     icon: 'error',
                                                     title: 'Oops...',
-                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    footer: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    text: `Cadena ${string} Invalida`,
                                                     background: "#2c2c2c",
                                                     color: "#fff",
                                                     confirmButtonColor: "#850287",
@@ -407,7 +421,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                             Swal.fire({
                                                 icon: 'error',
                                                 title: 'Oops...',
-                                                text: 'Transicion Q₁₃-Q₁₄ invalida!',
+                                                footer: 'Transicion Q₁₃-Q₁₄ invalida!',
+                                                text: `Cadena ${string} Invalida`,
                                                 background: "#2c2c2c",
                                                 color: "#fff",
                                                 confirmButtonColor: "#850287",
@@ -419,7 +434,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                         Swal.fire({
                                             icon: 'error',
                                             title: 'Oops...',
-                                            text: 'Transicion Q₁₂-Q₁₃ invalida!',
+                                            footer: 'Transicion Q₁₂-Q₁₃ invalida!',
+                                            text: `Cadena ${string} Invalida`,
                                             background: "#2c2c2c",
                                             color: "#fff",
                                             confirmButtonColor: "#850287",
@@ -431,7 +447,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                     Swal.fire({
                                         icon: 'error',
                                         title: 'Oops...',
-                                        text: 'Transicion Q₁₁-Q₁₂ invalida!',
+                                        footer: 'Transicion Q₁₁-Q₁₂ invalida!',
+                                        text: `Cadena ${string} Invalida`,
                                         background: "#2c2c2c",
                                         color: "#fff",
                                         confirmButtonColor: "#850287",
@@ -443,7 +460,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                 Swal.fire({
                                     icon: 'error',
                                     title: 'Oops...',
-                                    text: 'Transicion Q₅-Q₆ o Q₁₁ invalida!',
+                                    footer: 'Transicion Q₅-Q₆ o Q₁₁ invalida!',
+                                    text: `Cadena ${string} Invalida`,
                                     background: "#2c2c2c",
                                     color: "#fff",
                                     confirmButtonColor: "#850287",
@@ -455,7 +473,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
-                                text: 'Transicion Q₄-Q₅ invalida!',
+                                footer: 'Transicion Q₄-Q₅ invalida!',
+                                text: `Cadena ${string} Invalida`,
                                 background: "#2c2c2c",
                                 color: "#fff",
                                 confirmButtonColor: "#850287",
@@ -467,7 +486,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'Transicion Q₃-Q₄ invalida!',
+                            footer: 'Transicion Q₃-Q₄ invalida!',
+                            text: `Cadena ${string} Invalida`,
                             background: "#2c2c2c",
                             color: "#fff",
                             confirmButtonColor: "#850287",
@@ -479,7 +499,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Transicion Q₁-Q₃ invalida!',
+                        footer: 'Transicion Q₁-Q₃ invalida!',
+                        text: `Cadena ${string} Invalida`,
                         background: "#2c2c2c",
                         color: "#fff",
                         confirmButtonColor: "#850287",
@@ -518,7 +539,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'error',
                                                         title: 'Oops...',
-                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        footer: 'cadena no finalizada!, quedan elementos por evaluar',
+                                                        text: `Cadena ${string} Invalida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -529,7 +551,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'success',
                                                         title: 'Congrats...',
-                                                        text: 'Cadena valida',
+                                                        footer: 'Cadena finalizada en estado de aceptación',
+                                                        text: `Cadena ${string} Valida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -540,7 +563,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                 Swal.fire({
                                                     icon: 'error',
                                                     title: 'Oops...',
-                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    footer: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    text: `Cadena ${string} Invalida`,
                                                     background: "#2c2c2c",
                                                     color: "#fff",
                                                     confirmButtonColor: "#850287",
@@ -552,7 +576,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                             Swal.fire({
                                                 icon: 'error',
                                                 title: 'Oops...',
-                                                text: 'Transicion Q₈-Q₁₄ invalida!',
+                                                footer: 'Transicion Q₈-Q₁₄ invalida!',
+                                                text: `Cadena ${string} Invalida`,
                                                 background: "#2c2c2c",
                                                 color: "#fff",
                                                 confirmButtonColor: "#850287",
@@ -564,7 +589,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                         Swal.fire({
                                             icon: 'error',
                                             title: 'Oops...',
-                                            text: 'Transicion Q₇-Q₈ invalida!',
+                                            footer: 'Transicion Q₇-Q₈ invalida!',
+                                            text: `Cadena ${string} Invalida`,
                                             background: "#2c2c2c",
                                             color: "#fff",
                                             confirmButtonColor: "#850287",
@@ -587,7 +613,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'error',
                                                         title: 'Oops...',
-                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        footer: 'cadena no finalizada!, quedan elementos por evaluar',
+                                                        text: `Cadena ${string} Invalida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -598,7 +625,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'success',
                                                         title: 'Congrats...',
-                                                        text: 'Cadena valida',
+                                                        footer: 'Cadena finalizada en estado de aceptación',
+                                                        text: `Cadena ${string} Valida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -609,7 +637,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                 Swal.fire({
                                                     icon: 'error',
                                                     title: 'Oops...',
-                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    footer: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    text: `Cadena ${string} Invalida`,
                                                     background: "#2c2c2c",
                                                     color: "#fff",
                                                     confirmButtonColor: "#850287",
@@ -622,6 +651,7 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                 icon: 'error',
                                                 title: 'Oops...',
                                                 text: 'Transicion Q₁₀-Q₁₄ invalida!',
+                                                footer: `Cadena ${string} Invalida`,
                                                 background: "#2c2c2c",
                                                 color: "#fff",
                                                 confirmButtonColor: "#850287",
@@ -633,7 +663,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                         Swal.fire({
                                             icon: 'error',
                                             title: 'Oops...',
-                                            text: 'Transicion Q₉-Q₁₀ invalida!',
+                                            footer: 'Transicion Q₉-Q₁₀ invalida!',
+                                            text: `Cadena ${string} Invalida`,
                                             background: "#2c2c2c",
                                             color: "#fff",
                                             confirmButtonColor: "#850287",
@@ -645,7 +676,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                     Swal.fire({
                                         icon: 'error',
                                         title: 'Oops...',
-                                        text: 'Transicion Q₆-Q₇ o Q₉ invalida!',
+                                        footer: 'Transicion Q₆-Q₇ o Q₉ invalida!',
+                                        text: `Cadena ${string} Invalida`,
                                         background: "#2c2c2c",
                                         color: "#fff",
                                         confirmButtonColor: "#850287",
@@ -671,7 +703,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'error',
                                                         title: 'Oops...',
-                                                        text: 'cadena invalida, cadena no finalizada!',
+                                                        footer: 'cadena no finalizada!, quedan elementos por evaluar',
+                                                        text: `Cadena ${string} Invalida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -682,7 +715,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                     Swal.fire({
                                                         icon: 'success',
                                                         title: 'Congrats...',
-                                                        text: 'Cadena valida',
+                                                        footer: 'Cadena finalizada en estado de aceptacion',
+                                                        text: `Cadena ${string} Valida`,
                                                         background: "#2c2c2c",
                                                         color: "#fff",
                                                         confirmButtonColor: "#850287",
@@ -693,7 +727,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                                 Swal.fire({
                                                     icon: 'error',
                                                     title: 'Oops...',
-                                                    text: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    footer: 'Transicion Q₁₄-Q₁₅ invalida!',
+                                                    text: `Cadena ${string} Invalida`,
                                                     background: "#2c2c2c",
                                                     color: "#fff",
                                                     confirmButtonColor: "#850287",
@@ -705,7 +740,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                             Swal.fire({
                                                 icon: 'error',
                                                 title: 'Oops...',
-                                                text: 'Transicion Q₁₃-Q₁₄ invalida!',
+                                                footer: 'Transicion Q₁₃-Q₁₄ invalida!',
+                                                text: `Cadena ${string} Invalida`,
                                                 background: "#2c2c2c",
                                                 color: "#fff",
                                                 confirmButtonColor: "#850287",
@@ -717,7 +753,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                         Swal.fire({
                                             icon: 'error',
                                             title: 'Oops...',
-                                            text: 'Transicion Q₁₂-Q₁₃ invalida!',
+                                            footer: 'Transicion Q₁₂-Q₁₃ invalida!',
+                                            text: `Cadena ${string} Invalida`,
                                             background: "#2c2c2c",
                                             color: "#fff",
                                             confirmButtonColor: "#850287",
@@ -729,7 +766,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                     Swal.fire({
                                         icon: 'error',
                                         title: 'Oops...',
-                                        text: 'Transicion Q₁₁-Q₁₂ invalida!',
+                                        footer: 'Transicion Q₁₁-Q₁₂ invalida!',
+                                        text: `Cadena ${string} Invalida`,
                                         background: "#2c2c2c",
                                         color: "#fff",
                                         confirmButtonColor: "#850287",
@@ -741,7 +779,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                                 Swal.fire({
                                     icon: 'error',
                                     title: 'Oops...',
-                                    text: 'Transicion Q₅-Q₆ o Q₁₁ invalida!',
+                                    footer: 'Transicion Q₅-Q₆ o Q₁₁ invalida!',
+                                    text: `Cadena ${string} Invalida`,
                                     background: "#2c2c2c",
                                     color: "#fff",
                                     confirmButtonColor: "#850287",
@@ -753,7 +792,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
-                                text: 'Transicion Q₄-Q₅ invalida!',
+                                footer: 'Transicion Q₄-Q₅ invalida!',
+                                text: `Cadena ${string} Invalida`,
                                 background: "#2c2c2c",
                                 color: "#fff",
                                 confirmButtonColor: "#850287",
@@ -765,7 +805,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'Transicion Q₃-Q₄ invalida!',
+                            footer: 'Transicion Q₃-Q₄ invalida!',
+                            text: `Cadena ${string} Invalida`,
                             background: "#2c2c2c",
                             color: "#fff",
                             confirmButtonColor: "#850287",
@@ -777,7 +818,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Transicion Q₂-Q₃ invalida!',
+                        footer: 'Transicion Q₂-Q₃ invalida!',
+                        text: `Cadena ${string} Invalida`,
                         background: "#2c2c2c",
                         color: "#fff",
                         confirmButtonColor: "#850287",
@@ -789,7 +831,8 @@ const [evaluationOpc, setEvaluationOpc] = useState(0);
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Transicion Q₀-Q₁ o Q₂ invalida!',
+                    footer: 'Transicion Q₀-Q₁ o Q₂ invalida!',
+                    text: `Cadena ${string} Invalida`,
                     background: "#2c2c2c",
                     color: "#fff",
                     confirmButtonColor: "#850287",
